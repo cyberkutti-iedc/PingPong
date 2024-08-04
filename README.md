@@ -66,7 +66,7 @@ For detailed instructions, refer to these resources:
 
 ## 🎥 Product Walkthrough
 
-[Watch the product walkthrough video](Link Here)
+[Watch the product walkthrough video](https://youtu.be/Zjwk74kRIpU?si=jgKsDziQvETHBNSQ)
 
 ---
 
