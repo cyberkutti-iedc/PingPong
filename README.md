@@ -49,15 +49,6 @@ The **PingPong Notifier** hardware unit uses NodeMCU to display GitHub informati
 
 This hardware unit provides a tangible, interactive way to monitor GitHub activities.
 
-## 🚀 Getting Started
-
-To get started with **PingPong Notifier**, follow the instructions below for each component:
-
-1. **Website:** [Visit the website](#) and sign in with your GitHub account.
-2. **Server:** Set up the server locally or deploy it to your preferred hosting service.
-3. **Chrome Extension:** [Download the extension](#) from the Chrome Web Store and configure it with your GitHub username.
-4. **NodeMCU Hardware:** Follow the [NodeMCU setup guide](#) to assemble and configure your hardware unit.
-
 ## 📚 Documentation
 
 For detailed documentation on setup, configuration, and usage, refer to the following resources:
@@ -69,8 +60,11 @@ For detailed documentation on setup, configuration, and usage, refer to the foll
 
 ---
 ## Team members
-1. [Name 1](https://github.com/TH-Activities/saturday-hack-night-template)
-2. [Name 2](https://github.com/TH-Activities/saturday-hack-night-template)
+1. [SREERAJ V RAJESH](https://github.com/cyberkutti-iedc)
+2. [RAHAN MICHAEL JUDES](https://github.com/gitmwon)
+3. [EDWIN RAFFY](https://github.com/EduEdwin24)
+4. [Sarath Murukan](https://github.com/SarathSNMIMT)
+   
 ## Link to product walkthrough
 [link to video](Link Here)
 ## How it Works ?
