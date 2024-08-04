@@ -132,10 +132,129 @@ For detailed documentation on setup, configuration, and usage, refer to the foll
    - **LCD 16x2 I2C:** Displays data in a simple text format on a 16x2 character screen.
    - **TFT LCD Display:** Provides a more graphical presentation of the data with various text sizes and colors for a more detailed view.
 
-This setup ensures that data is efficiently collected, processed, and displayed across various platforms, including web, browser extensions, and hardware interfaces.
+---
 
-## Libraries used
-Library Name - Version
+# Libraries and Tools Used
+
+## Client-Side Libraries
+
+### Dependencies
+
+- **`animate.css`**: ^4.1.1  
+  Provides a collection of cross-browser CSS animations for adding animations to web projects.
+
+- **`axios`**: ^1.7.3  
+  A promise-based HTTP client for making HTTP requests in the browser and Node.js.
+
+- **`vue`**: ^3.4.29  
+  A progressive JavaScript framework for building user interfaces.
+
+- **`vue-router`**: ^4.4.2  
+  The official router for Vue.js, enabling navigation and routing within Vue.js applications.
+
+### Development Dependencies
+
+- **`@vitejs/plugin-vue`**: ^5.0.5  
+  Vite plugin for handling `.vue` files.
+
+- **`@vitejs/plugin-vue-jsx`**: ^4.0.0  
+  Adds JSX support for Vue.js components in Vite.
+
+- **`autoprefixer`**: ^10.4.20  
+  A PostCSS plugin that automatically adds vendor prefixes to CSS rules.
+
+- **`eslint`**: ^8.57.0  
+  Linting utility for identifying and fixing problems in JavaScript code.
+
+- **`eslint-plugin-vue`**: ^9.23.0  
+  ESLint plugin for linting Vue.js files.
+
+- **`postcss`**: ^8.4.40  
+  Tool for transforming CSS with JavaScript plugins.
+
+- **`tailwindcss`**: ^3.4.7  
+  Utility-first CSS framework for rapid design customization.
+
+- **`vite`**: ^5.3.1  
+  Modern build tool and development server offering fast hot module replacement (HMR) and optimized production builds.
+
+## Server-Side Libraries
+
+### Dependencies
+
+- **`@octokit/core`**: ^6.1.2  
+  GitHub's official library for interacting with the GitHub API.
+
+- **`cors`**: ^2.8.5  
+  Middleware to enable Cross-Origin Resource Sharing (CORS) in Express applications.
+
+- **`dotenv`**: ^16.4.5  
+  Loads environment variables from a `.env` file into `process.env`.
+
+- **`express`**: ^4.19.2  
+  A minimal and flexible Node.js web application framework.
+
+- **`node-fetch`**: ^3.3.2  
+  A lightweight module that brings `window.fetch` to Node.js.
+
+- **`nodemon`**: ^3.1.4  
+  A tool that helps develop Node.js applications by automatically restarting the server when file changes are detected.
+
+### Scripts
+
+- **`start`**: Runs the server with `node server.js`.
+
+- **`dev`**: Runs the server with `nodemon server.js` for development.
+
+## Chrome Extension Libraries
+
+### Files
+
+- **`HTML`**  
+  Structure and layout of the Chrome extension's user interface.
+
+- **`CSS`**  
+  Styling for the Chrome extension's user interface.
+
+- **`JS`**  
+  JavaScript for adding interactivity and functionality to the Chrome extension.
+
+- **`JSON`**  
+  Configuration and data files used by the Chrome extension.
+
+## Hardware Unit Libraries
+
+### Libraries Used
+
+- **`ESP8266WiFi`**  
+  Manages the WiFi connections on the ESP8266 module.
+
+- **`ESP8266HTTPClient`**  
+  Facilitates HTTP requests and responses on the ESP8266.
+
+- **`ArduinoJson`**  
+  A library for parsing and generating JSON data on Arduino-compatible platforms.
+
+- **`Wire`**  
+  I2C communication library for interfacing with I2C devices.
+
+### Display Options
+
+- **`TFT_eSPI`**  
+  Library for controlling TFT LCD displays with the ESP8266.
+
+- **`LiquidCrystal_I2C`**  
+  Library for interfacing with 16x2 I2C LCD displays.
+
+---
+
+## Installation
+
+To install these dependencies, use the following command:
+
+```bash
+npm install
+
 ## How to configure
 Instructions for setting up project
 ## How to Run
