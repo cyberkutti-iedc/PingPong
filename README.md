@@ -53,10 +53,10 @@ This hardware unit provides a tangible, interactive way to monitor GitHub activi
 
 For detailed documentation on setup, configuration, and usage, refer to the following resources:
 
-- [Website Documentation](#)
-- [Server API Documentation](#)
+- [Website Documentation](doc/website.md)
+- [Server API Documentation](doc/server.md)
 - [Chrome Extension Guide](https://www.youtube.com/watch?v=yNFwFQrc27Q)
-- [NodeMCU Hardware Instructions](#)
+- [NodeMCU Hardware Instructions](doc/hardware-unit.md)
 
 ---
 ## Team members
