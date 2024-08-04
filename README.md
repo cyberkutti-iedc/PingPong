@@ -55,7 +55,7 @@ For detailed documentation on setup, configuration, and usage, refer to the foll
 
 - [Website Documentation](doc/Website.md)
 - [Server API Documentation](doc/Server.md)
-- [Chrome Extension Guide](doc/Chrome Extension.md)
+- [Chrome Extension Guide](doc/ChromeExtension.md)
 - [NodeMCU Hardware Instructions](doc/HardwareUnit.md)
 
 ---
