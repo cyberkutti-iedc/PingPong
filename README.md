@@ -248,17 +248,385 @@ For detailed documentation on setup, configuration, and usage, refer to the foll
 
 ---
 
+# Installation Guide
+
 ## Installation
 
-To install these dependencies, use the following command:
+To set up the project and install dependencies, you have multiple options. Choose the one that best fits your needs.
 
-```bash
-npm install
+### Option 1: Use the Provided Scripts
+
+You can use the provided script files to automate the installation process. Choose the script based on your operating system:
+
+#### For Windows
+
+1. **Command Prompt (.cmd):**
+   - Save the following script as `install.cmd`.
+   - Double-click the file or run it from Command Prompt.
+
+   ```cmd
+   @echo off
+   REM Navigate to Client Directory and Install Dependencies
+   cd PingPong\Client
+   echo Installing client-side dependencies...
+   npm install
+
+   REM Navigate to Server Directory and Install Dependencies
+   cd ..\Server
+   echo Installing server-side dependencies...
+   npm install
+
+   REM Go back to the root directory
+   cd ..
+   echo Installation complete.
+   pause
+   ```
+
+2. **PowerShell (.ps1):**
+   - Save the following script as `install.ps1`.
+   - Open PowerShell and navigate to the directory where the file is saved.
+   - Run the script using `.\install.ps1`.
+
+   ```powershell
+   # Navigate to Client Directory and Install Dependencies
+   Set-Location -Path "PingPong\Client"
+   Write-Output "Installing client-side dependencies..."
+   npm install
+
+   # Navigate to Server Directory and Install Dependencies
+   Set-Location -Path "..\Server"
+   Write-Output "Installing server-side dependencies..."
+   npm install
+
+   # Go back to the root directory
+   Set-Location -Path ".."
+   Write-Output "Installation complete."
+   ```
+
+#### For Linux or macOS
+
+1. **Shell Script (.sh):**
+   - Save the following script as `install.sh`.
+   - Open a terminal and navigate to the directory where the file is saved.
+   - Make the script executable with `chmod +x install.sh`.
+   - Run the script using `./install.sh`.
+
+   ```bash
+   #!/bin/bash
+
+   # Navigate to Client Directory and Install Dependencies
+   cd PingPong/Client || { echo "Client directory not found"; exit 1; }
+   echo "Installing client-side dependencies..."
+   npm install
+
+   # Navigate to Server Directory and Install Dependencies
+   cd ../Server || { echo "Server directory not found"; exit 1; }
+   echo "Installing server-side dependencies..."
+   npm install
+
+   # Go back to the root directory
+   cd ..
+   echo "Installation complete."
+   ```
+
+### Option 2: Manual Installation
+
+If you prefer to manually install the dependencies:
+
+1. **Navigate to the Client Directory:**
+   ```bash
+   cd PingPong/Client
+   ```
+
+2. **Install Client-Side Dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Navigate to the Server Directory:**
+   ```bash
+   cd ../Server
+   ```
+
+4. **Install Server-Side Dependencies:**
+   ```bash
+   npm install
+   ```
+
+## Chrome Extension Installation
+
+To install the Chrome extension, follow these steps:
+
+1. **Open Chrome or Brave Browser.**
+2. **Navigate to `chrome://extensions/`** or **`brave://extensions/`**.
+3. **Enable "Developer mode"** by toggling the switch in the top-right corner.
+4. **Click on "Load unpacked".**
+5. **Select the directory** where the Chrome extension files (`manifest.json`, `background.js`, etc.) are located.
+6. **The extension should now be installed** and visible in the list of extensions.
+
+## NodeMCU Hardware Setup
+
+To set up the NodeMCU/ESP8266 hardware unit, follow these steps:
+
+### 1. **Install the Code**
+
+1. **Open the Arduino IDE**.
+2. **Select the NodeMCU board** from the Tools > Board menu.
+3. **Install the ESP8266 board package** if not already installed (Tools > Board > Boards Manager > Search for "esp8266" and install it).
+4. **Open the provided `.ino` file** and upload it to the NodeMCU.
+
+### 2. **Connect the Hardware**
+
+1. **Connect the NodeMCU** to your computer using a USB cable.
+2. **Ensure the display module** (LCD 16x2 I2C or TFT LCD) is connected to the NodeMCU:
+   - **LCD 16x2 I2C**: Connect the SDA and SCL pins to the corresponding pins on the NodeMCU.
+   - **TFT LCD**: Connect the necessary pins as per the TFT display's documentation.
+3. **Verify the wiring**:
+   - For **LCD 16x2 I2C**, ensure VCC and GND are properly connected.
+   - For **TFT LCD**, follow the specific wiring instructions provided with the TFT display.
+
+### 3. **Power On the NodeMCU**
+
+- **Power the NodeMCU** through the USB connection, and it should start running the uploaded code.
+
+By following these steps, you'll have the project set up and running on your local environment, browser, and hardware.
+
+---
 
 ## How to configure
 Instructions for setting up project
+
+## Configuring the Client
+
+To configure the client side of the project, follow these steps:
+
+### 1. **API Endpoint Configuration**
+
+1. **Navigate to the Client Directory:**
+   ```bash
+   cd PingPong/Client
+   ```
+
+2. **Edit the Vue.js Configuration:**
+   - Open the configuration file where the API endpoint is defined (e.g., `src/api.js` or `src/config.js`).
+   - Update the API endpoint URL to match your server's address. For example:
+
+     ```javascript
+     // Example: src/api.js
+     export const API_URL = 'http://localhost:8080/user-info'; // Update to your server URL
+     ```
+
+3. **Save Changes** and proceed to use the updated API endpoint.
+
+### 2. **Styling Configuration**
+
+1. **Edit Tailwind CSS Configuration:**
+   - Open the Tailwind configuration file (`tailwind.config.js`).
+   - Customize the colors, fonts, or any other Tailwind settings as needed.
+
+     ```javascript
+     // Example: tailwind.config.js
+     module.exports = {
+       theme: {
+         extend: {
+           colors: {
+             primary: '#1D4ED8',
+             secondary: '#FBBF24',
+           },
+         },
+       },
+     }
+     ```
+
+2. **Edit CSS Files:**
+   - Modify any additional CSS files in the `src/assets` directory to style components as desired.
+
+## Configuring the Server
+
+To configure the server side of the project, follow these steps:
+
+### 1. **Environment Variables**
+
+1. **Create a `.env` File:**
+   - In the `Server` directory, create a `.env` file if it doesn't already exist.
+
+2. **Set Environment Variables:**
+   - Add the necessary environment variables to the `.env` file. For example:
+
+     ```env
+     GITHUB_API_TOKEN=YOUR GITHUB API TOKEN
+     GITHUB_USERNAME=YOUR GITHUB USERNAME
+
+     ```
+
+   - Ensure you replace `YOUR GITHUB API TOKEN` with a valid GitHub token if needed.
+
+### 2. **Update Server Configuration**
+
+1. **Edit the Server Configuration:**
+   - Open the `server.js` file and configure any necessary settings such as ports or API endpoints.
+
+   - Example to set up the server port:
+
+     ```javascript
+     // Example: server.js
+     const PORT = process.env.PORT || 8080;
+     ```
+
+2. **Save Changes** and ensure the server is configured as needed.
+
+## Configuring the Chrome Extension
+
+To configure the Chrome extension, follow these steps:
+
+### 1. **Update Manifest File**
+
+1. **Open `manifest.json`:**
+   - Located in the extension's directory.
+
+2. **Modify Configuration:**
+   - Update the `permissions`, `background`, `content_scripts`, and other fields as needed. For example:
+
+     ```json
+     {
+       "manifest_version": 3,
+       "name": "PingPong Extension",
+       "version": "1.0",
+       "permissions": ["storage", "activeTab"],
+       "background": {
+         "service_worker": "background.js"
+       },
+       "action": {
+         "default_popup": "popup.html"
+       },
+       "icons": {
+         "48": "icons/icon.png"
+       }
+     }
+     ```
+
+3. **Save Changes** and prepare for installation.
+
+## Configuring NodeMCU Hardware Unit
+
+To configure the NodeMCU/ESP8266 hardware unit, follow these steps:
+
+### 1. **Update the Arduino Sketch**
+
+1. **Open the Arduino IDE:**
+   - Load the `.ino` file provided for the NodeMCU/ESP8266.
+
+2. **Modify WiFi Credentials:**
+   - Update the WiFi credentials with your network information:
+
+     ```cpp
+     // Example: WiFi credentials
+     const char* ssid = "your_SSID";
+     const char* password = "your_PASSWORD";
+     ```
+
+3. **Choose Display Type:**
+   - Uncomment the appropriate display type based on whether you're using an LCD or TFT display.
+
+### 2. **Upload the Code**
+
+1. **Select the Board:**
+   - Choose "NodeMCU" from the Tools > Board menu in the Arduino IDE.
+
+2. **Upload the Sketch:**
+   - Click the upload button to transfer the code to the NodeMCU.
+
+### 3. **Connect the Hardware**
+
+1. **Connect the NodeMCU to Your Computer:**
+   - Use a USB cable to connect the NodeMCU.
+
+2. **Wire the Display Module:**
+   - For **LCD 16x2 I2C**, connect the SDA and SCL pins to the corresponding pins on the NodeMCU.
+   - For **TFT LCD**, follow the wiring instructions specific to the TFT display.
+
+3. **Power On the NodeMCU:**
+   - Ensure the NodeMCU is powered on and the display should start functioning according to the uploaded code.
+
+By following these configuration steps, you will set up and customize the client, server, Chrome extension, and NodeMCU hardware to fit your specific requirements.
+
+---
 ## How to Run
-Instructions for running
+```markdown
 
+## Automatic Startup Scripts
 
+To run the project automatically on system startup, use the appropriate script for your operating system. You can download the scripts from the following links:
+
+- **Windows:**
+  - [Batch Script (`start-dev.bat`)](./start-dev.bat)
+  - [PowerShell Script (`start-dev.ps1`)](./start-dev.ps1)
+
+- **Linux/macOS:**
+  - [Shell Script (`start-dev.sh`)](./start-dev.sh)
+
+### Instructions
+
+1. **Windows:**
+   - **Batch Script (`start-dev.bat`):**
+     - Download the batch file and place it in your startup folder.
+     - Access the startup folder by pressing `Win + R`, typing `shell:startup`, and pressing Enter.
+   - **PowerShell Script (`start-dev.ps1`):**
+     - Download the PowerShell script.
+     - Open PowerShell as Administrator and execute the script to add it to startup.
+
+2. **Linux/macOS:**
+   - **Shell Script (`start-dev.sh`):**
+     - Download the shell script and make it executable:
+       ```bash
+       chmod +x /path/to/start-dev.sh
+       ```
+     - Add it to your startup applications using your system's method (e.g., `~/.bashrc` for Linux or `launchd` for macOS).
+
+## Manual Running
+
+If you prefer to run the client and server manually, follow these steps:
+
+1. **Open Terminal or Command Prompt:**
+
+2. **Navigate to Server Directory and Run:**
+   ```bash
+   cd /path/to/server
+   npm run dev
+   ```
+
+3. **Open a New Terminal or Command Prompt Window:**
+
+4. **Navigate to Client Directory and Run:**
+   ```bash
+   cd /path/to/client
+   npm run dev
+   ```
+
+## Chrome Extension
+
+1. **Install the Extension:**
+   - Open Chrome or Brave.
+   - Go to `chrome://extensions/`.
+   - Enable "Developer mode" by toggling the switch in the top right corner.
+   - Click "Load unpacked" and select the extension directory.
+
+2. **Activate the Extension:**
+   - Ensure the extension is enabled by checking the toggle in the extensions page.
+
+## NodeMCU Hardware Unit
+
+1. **Power On the NodeMCU:**
+   - Connect the NodeMCU to a power source using a USB cable.
+
+2. **Ensure Network Connectivity:**
+   - Verify that the NodeMCU and your computer/server are connected to the same Wi-Fi network.
+
+3. **Start the Server:**
+   - Ensure that the server is running and accessible.
+
+4. **Verify Functionality:**
+   - Check the NodeMCU’s display to confirm it is working as expected and displaying the correct data.
+---
 Happy coding with PingPong Notifier! 🚀
+
