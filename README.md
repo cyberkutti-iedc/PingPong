@@ -67,9 +67,73 @@ For detailed documentation on setup, configuration, and usage, refer to the foll
    
 ## Link to product walkthrough
 [link to video](Link Here)
-## How it Works ?
-1. Explaining the working of project
-2. Embed video of project demo
+
+## How It Works
+
+## 1. Server
+
+**Role:** The server is the central component that collects, processes, and provides user data.
+
+**Technology:**
+- **Express:** A web application framework for Node.js that simplifies building server-side applications.
+- **Node.js:** A JavaScript runtime used to build the server-side application.
+- **Nodemon:** A utility that automatically restarts the server when code changes are detected.
+- **RESTful GitHub API:** Provides access to user data from GitHub in a standardized format.
+
+**Functionality:**
+
+1. **Data Collection:** The server fetches user data from GitHub using the GitHub RESTful API. This data typically includes profile information such as name, username, follower count, and following count.
+2. **API Endpoint:** The server exposes an API endpoint (e.g., `http://localhost:8080/user-info`) that serves the user data in JSON format.
+3. **Data Format:** The data is structured in JSON format to be easily consumed by client applications. Key fields include `name`, `user`, `followers`, and `following`.
+
+## 2. Client Website
+
+**Role:** The client website provides a graphical user interface for users to view the data.
+
+**Technology:**
+- **Vue.js:** A progressive JavaScript framework used for building the user interface.
+- **CSS:** Cascading Style Sheets used for styling the website.
+- **Tailwind CSS:** A utility-first CSS framework that enables rapid and responsive design.
+
+**Functionality:**
+
+1. **Data Fetching:** The Vue.js application retrieves data from the server’s API endpoint.
+2. **Data Display:** The fetched data is displayed on the website using Vue.js’s reactive components. This ensures that the website automatically updates when new data is received.
+3. **User Interface:** Tailwind CSS is used to style the website, creating a modern and user-friendly interface with responsive design elements.
+
+## 3. Chrome Extension
+
+**Role:** The Chrome extension provides a convenient way to access the data directly from the browser.
+
+**Technology:**
+- **HTML:** Used for the structure of the extension's user interface.
+- **CSS:** Used for styling the extension.
+- **JavaScript:** Handles the logic for fetching and displaying data.
+
+**Functionality:**
+
+1. **Data Fetching:** The extension sends requests to the server’s API endpoint to retrieve the latest user data.
+2. **Display Data:** The data is displayed within the extension’s popup or content area, making it easily accessible to users without navigating away from their current page.
+3. **User Interface:** The extension's UI is designed using HTML and CSS to be simple and functional, providing quick access to the data.
+
+## 4. Hardware Unit
+
+**Role:** The hardware unit displays the fetched data on a physical screen and periodically updates it.
+
+**Technology:**
+- **ESP8266 (NodeMCU):** A microcontroller with built-in WiFi used for connecting to the internet and handling data display.
+- **LCD 16x2 I2C or TFT LCD Display:** Two types of displays can be used to show the data.
+
+**Functionality:**
+
+1. **WiFi Connection:** The ESP8266 connects to a WiFi network using the provided credentials.
+2. **Data Fetching:** It periodically sends requests to the server’s API endpoint to get the latest user data.
+3. **Display Data:** Depending on the display used:
+   - **LCD 16x2 I2C:** Displays data in a simple text format on a 16x2 character screen.
+   - **TFT LCD Display:** Provides a more graphical presentation of the data with various text sizes and colors for a more detailed view.
+
+This setup ensures that data is efficiently collected, processed, and displayed across various platforms, including web, browser extensions, and hardware interfaces.
+
 ## Libraries used
 Library Name - Version
 ## How to configure
