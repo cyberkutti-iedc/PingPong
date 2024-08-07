@@ -222,6 +222,6 @@ To run the project automatically on startup:
 
 ---
 
-Happy coding with PingPong Notifier! 🚀
+Happy coding with PingPong! 🚀
 
 ---
