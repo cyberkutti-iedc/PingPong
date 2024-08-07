@@ -209,7 +209,7 @@ To run the project automatically on startup:
 ### NodeMCU Hardware Unit
 
 1. **Power On the NodeMCU:**
-   - Connect to a power source via USB.
+   - Connect to a power source through USB.
 
 2. **Ensure Network Connectivity:**
    - Ensure the NodeMCU and your server are on the same network.
